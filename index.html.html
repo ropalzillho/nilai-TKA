@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil TKA 2026 - SDN 5 Melayu</title>
+    <!-- Font Awesome untuk Icon Tajam & Stabil -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts untuk Tipografi Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #f0f7ff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.5) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(191, 219, 254, 0.4) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(239, 246, 255, 0.8) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* --- CONTAINER MOBILE-FIRST (Max 440px) --- */
+        .app-container {
+            width: 100%;
+            max-width: 440px;
+            min-height: 100vh;
+            background: transparent;
+            padding: 16px 16px 90px 16px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* --- HEADER SEKOLAH --- */
+        .school-header {
+            text-align: center;
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+
+        .school-logo {
+            font-size: 2.5rem;
+            color: #2563eb;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.15));
+            animation: pulse-logo 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .school-header h1 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+
+        .school-header p {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- EXPRESSIVE GLASSMORPHISM BOX --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.15);
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* --- TAB NAVIGATION CONTROL --- */
+        .view-section {
+            display: none;
+            width: 100%;
+            animation: fade-in 0.3s ease-out;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MENUS NILAIKU (PENCARIAN) --- */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: #2563eb;
+        }
+
+        .section-desc {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 16px 16px 48px;
+            border-radius: 16px;
+            border: 1.5px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1e293b;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .search-input::placeholder {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .search-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+            background: #ffffff;
+        }
+
+        .search-input:focus + .search-icon {
+            color: #3b82f6;
+        }
+
+        .btn-search {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-search:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
+        }
+
+        /* --- DRAMATIC LOADING SPINNER --- */
+        .loading-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 5px solid rgba(37, 99, 235, 0.15);
+            border-top: 5px solid #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            animation: pulse-text 1.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        /* --- SURPRISE BOUNCE CARD EFFECT --- */
+        .result-card-wrapper {
+            display: none;
+            width: 100%;
+        }
+
+        .bounce-animation {
+            animation: bounce-in 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+            70% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        /* --- THEMED INDIVIDUAL CARDS --- */
+        /* Base Card Style */
+        .result-card {
+            border-radius: 24px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.12);
+            margin-top: 8px;
+            width: 100%;
+        }
+
+        /* Rank 1: Emerald Shimmer Theme */
+        .card-rank-1 {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 2px solid #34d399;
+            box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.25);
+        }
+        
+        .card-rank-1::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%;
+            width: 150%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer-effect 3.5s infinite;
+        }
+
+        @keyframes shimmer-effect {
+            0% { left: -150%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* Rank 2: Blue Sapphire Theme */
+        .card-rank-2 {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            border: 2px solid #60a5fa;
+            box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Rank 3: Warm Orange Bronze Theme */
+        .card-rank-3 {
+            background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+            border: 2px solid #fb923c;
+            box-shadow: 0 15px 35px -5px rgba(249, 115, 22, 0.2);
+        }
+
+        /* Rank Normal: Elegant Glass Theme */
+        .card-rank-normal {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        /* Card Elements */
+        .badge-rank {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 14px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-rank-1 {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-rank-2 {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .badge-rank-3 {
+            background: #ea580c;
+            color: white;
+            box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+        }
+
+        .badge-rank-normal {
+            background: #64748b;
+            color: white;
+        }
+
+        .student-meta {
+            margin-bottom: 24px;
+        }
+
+        .student-meta .greet {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .student-meta .name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            max-width: 75%;
+        }
+
+        .student-meta .nisn {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #475569;
+            margin-top: 4px;
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        /* Vertical Safe Score Row Layout */
+        .score-box-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .score-row-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .card-rank-normal .score-row-item {
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+        }
+
+        .subject-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-start;
+        }
+
+        .subject-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .subject-predikat {
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            width: auto; /* Anti Nabrak pixel kaku */
+        }
+
+        /* Predikat Colors */
+        .pred-baik-istimewa {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .pred-baik {
+            background-color: #e0f2fe;
+            color: #075985;
+        }
+        .pred-memadai {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .pred-kurang {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        /* Combined Final Summary Footer */
+        .card-score-footer {
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-rank-normal .card-score-footer {
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .footer-value {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #1e293b;
+        }
+
+        .badge-status {
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Error / Not Found Message */
+        .error-card {
+            display: none;
+            background: #fff5f5;
+            border: 1.5px solid #feb2b2;
+            border-radius: 20px;
+            padding: 18px;
+            color: #c53030;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        .error-card i {
+            font-size: 1.4rem;
+        }
+
+        .error-card p {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* --- REKAPITULASI HOME VIEW (ANONIM) --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-mini-box {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-mini-box i {
+            font-size: 1.25rem;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .stat-mini-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-mini-val {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-top: 2px;
+        }
+
+        /* Bar Chart Distribution Styles (Manual CSS Divs) */
+        .chart-section-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-top: 10px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1.5px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+
+        .custom-bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .chart-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .chart-row-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .bar-container {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 99px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 99px;
+            width: 0%; /* Diisi via JS */
+            transition: width 1s cubic-bezier(0.1, 0.8, 0.25, 1);
+        }
+
+        .bg-baik {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .bg-memadai {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        .bg-kurang {
+            background: linear-gradient(90deg, #ef4444, #f87171);
+        }
+
+        /* --- INFORMASI KOPERASI / FOOTER --- */
+        .credit-text {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-top: 8px;
+        }
+
+        .credit-text a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* --- FIXED BOTTOM NAVBAR (HEIGHT 64PX) --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 440px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 -4px 20px rgba(148, 163, 184, 0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            z-index: 999;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: all 0.25s ease;
+            gap: 3px;
+        }
+
+        .nav-item i {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-item span {
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* Active Nav Styling */
+        .nav-item.active {
+            color: #2563eb;
+        }
+
+        .nav-item.active i {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- HEADER KEMENTERIAN & SATUAN PENDIDIKAN -->
+        <header class="school-header">
+            <div class="school-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h1>SD NEGERI 5 MELAYU</h1>
+            <p>TES KEMAMPUAN AKADEMIK TAHUN 2026</p>
+        </header>
+
+        <!-- ==================== LAMAN 2: NILAIKU (DEFAULT) ==================== -->
+        <div id="section-nilaiku" class="view-section active">
+            <div class="glass-card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-address-card"></i>
+                    Buka Amplop Nilai
+                </h2>
+                <p class="section-desc">Masukkan 10 digit NISN (Nomor Induk Siswa Nasional) Anda untuk melihat hasil evaluasi secara detail beserta peringkat.</p>
+                
+                <div class="search-wrapper">
+                    <input type="number" id="input-nisn" class="search-input" placeholder="Contoh: 0149409187" oninput="limitDigits(this)" pattern="\d*">
+                    <i class="fa-solid fa-search search-icon"></i>
+                </div>
+                
+                <button onclick="prosesPencarian()" class="btn-search">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    Buka Amplop Nilai
+                </button>
+
+                <!-- Animasi Loading Dramatis -->
+                <div id="search-loading" class="loading-container">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Membuka lembar dokumen ujian...<br><span style="font-weight:500; font-size: 0.75rem; color: #64748b;">Harap tunggu sebentar</span></p>
+                </div>
+
+                <!-- Notifikasi Error (NISN Salah / Tidak Ditemukan) -->
+                <div id="error-message" class="error-card">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p id="error-text">NISN tidak ditemukan. Periksa kembali digit yang Anda masukkan.</p>
+                </div>
+            </div>
+
+            <!-- Kartu Hasil Individu (Surprise Bounce) -->
+            <div id="result-wrapper" class="result-card-wrapper">
+                <!-- Template Konten Hasil akan disuntikkan oleh JS -->
+            </div>
+        </div>
+
+        <!-- ==================== LAMAN 1: HOME (REKAPITULASI ANONIM) ==================== -->
+        <div id="section-home" class="view-section">
+            <!-- Ringkasan Kelas -->
+            <div class="glass-card">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Statistik Kelas
+                </h2>
+                <p class="section-desc">Hasil kolektif kelas secara anonim untuk menjaga privasi akademis siswa.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                        <div class="stat-mini-label">Rerata Matematika</div>
+                        <div class="stat-mini-val" id="rerata-matematika">0.00</div>
+                    </div>
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-book"></i>
+                        <div class="stat-mini-label">Rerata B. Indonesia</div>
+                        <div class="stat-mini-val" id="rerata-bahasa">0.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distribusi Predikat Matematika -->
+            <div class="glass-card">
+                <h3 class="chart-section-title">Distribusi Nilai Matematika</h3>
+                <div class="custom-bar-chart">
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Baik / Baik-Istimewa</span>
+                            <span id="mtk-baik-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="mtk-baik-bar" class="bar-fill bg-baik"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Memadai</span>
+                            <span id="mtk-memadai-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="mtk-memadai-bar" class="bar-fill bg-memadai"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Kurang</span>
+                            <span id="mtk-kurang-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="mtk-kurang-bar" class="bar-fill bg-kurang"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distribusi Predikat Bahasa Indonesia -->
+            <div class="glass-card">
+                <h3 class="chart-section-title">Distribusi Nilai B. Indonesia</h3>
+                <div class="custom-bar-chart">
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Baik / Baik-Istimewa</span>
+                            <span id="ind-baik-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="ind-baik-bar" class="bar-fill bg-baik"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Memadai</span>
+                            <span id="ind-memadai-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="ind-memadai-bar" class="bar-fill bg-memadai"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-row-header">
+                            <span>Kurang</span>
+                            <span id="ind-kurang-pct">0 siswa (0%)</span>
+                        </div>
+                        <div class="bar-container">
+                            <div id="ind-kurang-bar" class="bar-fill bg-kurang"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT & CREDITS -->
+        <footer style="margin-top: auto; padding: 10px 0;">
+            <p class="credit-text">
+                Kementerian Pendidikan Dasar dan Menengah<br>
+                Dinas Pendidikan Kabupaten Barito Utara
+            </p>
+            <p class="credit-text" style="color:#cbd5e1; font-size:0.65rem; margin-top:4px;">
+                Dicetak: Kamis, 28 Mei 2026 Jam 11:58:22
+            </p>
+        </footer>
+
+        <!-- NAVIGATION BOTTOM BAR -->
+        <nav class="bottom-nav">
+            <button id="nav-btn-home" class="nav-item" onclick="switchTab('home')">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Home</span>
+            </button>
+            <button id="nav-btn-nilaiku" class="nav-item active" onclick="switchTab('nilaiku')">
+                <i class="fa-solid fa-address-card"></i>
+                <span>Nilaiku</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <script>
+        // ==================== RAW DATA EXTRACTION FROM PDF ====================
+        const rawSiswaList = [
+            { no: 1, pNo: "T1-26-14-06-0055-0001-8", nisn: "0149409187", nama: "Adelio Tsabit Alvaro", mtkVal: 83.33, mtkKet: "Baik", indVal: 96.67, indKet: "Baik - Istimewa" },
+            { no: 2, pNo: "T1-26-14-06-0055-0002-7", nisn: "3139507955", nama: "SITI AISYAH", mtkVal: 46.67, mtkKet: "Memadai", indVal: 63.33, indKet: "Memadai" },
+            { no: 3, pNo: "T1-26-14-06-0055-0003-6", nisn: "3149266515", nama: "Fauzia Rafifa", mtkVal: 53.33, mtkKet: "Memadai", indVal: 43.33, indKet: "Kurang" },
+            { no: 4, pNo: "T1-26-14-06-0055-0004-5", nisn: "0142911938", nama: "Arkan Attaya Almair El Fayet", mtkVal: 40.00, mtkKet: "Memadai", indVal: 76.67, indKet: "Baik" },
+            { no: 5, pNo: "T1-26-14-06-0055-0005-4", nisn: "3131972492", nama: "Nabila Mezzaluna", mtkVal: 60.00, mtkKet: "Baik", indVal: 80.00, indKet: "Baik" },
+            { no: 6, pNo: "T1-26-14-06-0055-0006-3", nisn: "0137305703", nama: "Kyrandrea Oktavia Ariqa", mtkVal: 70.00, mtkKet: "Baik", indVal: 80.00, indKet: "Baik" },
+            { no: 7, pNo: "T1-26-14-06-0055-0007-2", nisn: "0134968302", nama: "Muhammad Zein Umar", mtkVal: 86.67, mtkKet: "Baik", indVal: 90.00, indKet: "Baik" },
+            { no: 8, pNo: "T1-26-14-06-0055-0008-9", nisn: "0143355525", nama: "Khansa Faida Annaila", mtkVal: 53.33, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 9, pNo: "T1-26-14-06-0055-0009-8", nisn: "0147158196", nama: "Muna Hazijah", mtkVal: 66.67, mtkKet: "Baik", indVal: 100.00, indKet: "Baik - Istimewa" },
+            { no: 10, pNo: "T1-26-14-06-0055-0010-7", nisn: "0144879250", nama: "Dhafitha Nizza Susanto", mtkVal: 66.67, mtkKet: "Baik", indVal: 86.67, indKet: "Baik" },
+            { no: 11, pNo: "T1-26-14-06-0055-0011-6", nisn: "0143326790", nama: "Fida Humaira Shaleha", mtkVal: 53.33, mtkKet: "Memadai", indVal: 63.33, indKet: "Memadai" },
+            { no: 12, pNo: "T1-26-14-06-0055-0012-5", nisn: "0146993716", nama: "AL FARIDA FAJAIAH", mtkVal: 60.00, mtkKet: "Baik", indVal: 83.33, indKet: "Baik" },
+            { no: 13, pNo: "T1-26-14-06-0055-0013-4", nisn: "3133534535", nama: "Dzaky Almair", mtkVal: 46.67, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 14, pNo: "T1-26-14-06-0055-0014-3", nisn: "0139010993", nama: "Angga Lukmanul Haq", mtkVal: 76.67, mtkKet: "Baik", indVal: 66.67, indKet: "Memadai" },
+            { no: 15, pNo: "T1-26-14-06-0055-0015-2", nisn: "0144161371", nama: "AFDAL REYHANSYAH", mtkVal: 53.33, mtkKet: "Memadai", indVal: 50.00, indKet: "Memadai" },
+            { no: 16, pNo: "T1-26-14-06-0055-0016-9", nisn: "0132055858", nama: "Muhammad Azzam Rabbani", mtkVal: 90.00, mtkKet: "Baik", indVal: 80.00, indKet: "Baik" },
+            { no: 17, pNo: "T1-26-14-06-0055-0017-8", nisn: "3148718356", nama: "ANDIRA SAFITRI", mtkVal: 63.33, mtkKet: "Baik", indVal: 73.33, indKet: "Memadai" },
+            { no: 18, pNo: "T1-26-14-06-0055-0018-7", nisn: "0143923330", nama: "AISYA MAULI CHAHYADI", mtkVal: 36.67, mtkKet: "Memadai", indVal: 76.67, indKet: "Baik" },
+            { no: 19, pNo: "T1-26-14-06-0055-0019-6", nisn: "0142354853", nama: "Livia Kirana Puteri Pravangasta", mtkVal: 26.67, mtkKet: "Kurang", indVal: 56.67, indKet: "Memadai" },
+            { no: 20, pNo: "T1-26-14-06-0055-0020-5", nisn: "3142433954", nama: "TASYA SALSABILA TAJRII", mtkVal: 40.00, mtkKet: "Memadai", indVal: 76.67, indKet: "Baik" },
+            { no: 21, pNo: "T1-26-14-06-0055-0021-4", nisn: "3145543190", nama: "Ghina Nurul Qayyum", mtkVal: 56.67, mtkKet: "Baik", indVal: 83.33, indKet: "Baik" },
+            { no: 22, pNo: "T1-26-14-06-0055-0022-3", nisn: "0131880218", nama: "Afeefa Farzana Alwa", mtkVal: 53.33, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 23, pNo: "T1-26-14-06-0055-0023-2", nisn: "3148907981", nama: "Muhammad Irja Anugrah", mtkVal: 30.00, mtkKet: "Kurang", indVal: 60.00, indKet: "Memadai" },
+            { no: 24, pNo: "T1-26-14-06-0055-0024-9", nisn: "0141344110", nama: "Hawa Jasmin Farras", mtkVal: 80.00, mtkKet: "Baik", indVal: 90.00, indKet: "Baik" },
+            { no: 25, pNo: "T1-26-14-06-0055-0025-8", nisn: "3140032058", nama: "Akbar Domi Putra", mtkVal: 23.33, mtkKet: "Kurang", indVal: 56.67, indKet: "Memadai" },
+            { no: 26, pNo: "T1-26-14-06-0055-0026-7", nisn: "3146569586", nama: "KAYLA ALMIRA FISYA", mtkVal: 70.00, mtkKet: "Baik", indVal: 83.33, indKet: "Baik" },
+            { no: 27, pNo: "T1-26-14-06-0055-0027-6", nisn: "0135927784", nama: "Muhammad Aldo", mtkVal: 53.33, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 28, pNo: "T1-26-14-06-0055-0028-5", nisn: "0144155709", nama: "Nadilla Azahra", mtkVal: 30.00, mtkKet: "Kurang", indVal: 43.33, indKet: "Kurang" },
+            { no: 29, pNo: "T1-26-14-06-0055-0029-4", nisn: "0144358794", nama: "Rafka Aditya Saputra", mtkVal: 53.33, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 30, pNo: "T1-26-14-06-0055-0030-3", nisn: "0135008077", nama: "Nureliza Paika Sari", mtkVal: 43.33, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 31, pNo: "T1-26-14-06-0055-0031-2", nisn: "0144279641", nama: "GWIN NINDIA RASYID", mtkVal: 43.33, mtkKet: "Memadai", indVal: 66.67, indKet: "Memadai" },
+            { no: 32, pNo: "T1-26-14-06-0055-0032-9", nisn: "3146982695", nama: "NAUFAL DARY ABIYYU", mtkVal: 56.67, mtkKet: "Baik", indVal: 66.67, indKet: "Memadai" },
+            { no: 33, pNo: "T1-26-14-06-0055-0033-8", nisn: "0149419767", nama: "Rafa Azka Putra", mtkVal: 50.00, mtkKet: "Memadai", indVal: 90.00, indKet: "Baik" },
+            { no: 34, pNo: "T1-26-14-06-0055-0034-7", nisn: "0146214165", nama: "Azam Arganta", mtkVal: 43.33, mtkKet: "Memadai", indVal: 70.00, indKet: "Memadai" },
+            { no: 35, pNo: "T1-26-14-06-0055-0035-6", nisn: "0145748914", nama: "Dhafitha Nizza Nur Azizah", mtkVal: 33.33, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 36, pNo: "T1-26-14-06-0055-0036-5", nisn: "0141995872", nama: "Fadil Saidi Shaid", mtkVal: 33.33, mtkKet: "Memadai", indVal: 33.33, indKet: "Kurang" },
+            { no: 37, pNo: "T1-26-14-06-0055-0037-4", nisn: "3134928629", nama: "Muhammad Novan Triadie", mtkVal: 46.67, mtkKet: "Memadai", indVal: 50.00, indKet: "Memadai" },
+            { no: 38, pNo: "T1-26-14-06-0055-0038-3", nisn: "0131642900", nama: "ARBIATUL ADAWIAH", mtkVal: 56.67, mtkKet: "Baik", indVal: 86.67, indKet: "Baik" },
+            { no: 39, pNo: "T1-26-14-06-0055-0039-2", nisn: "0127409232", nama: "ALDHEN ZAKARIA BUNGSU", mtkVal: 20.00, mtkKet: "Kurang", indVal: 13.33, indKet: "Kurang" },
+            { no: 40, pNo: "T1-26-14-06-0055-0040-9", nisn: "0149574226", nama: "Annabella Birgitha", mtkVal: 66.67, mtkKet: "Baik", indVal: 93.33, indKet: "Baik" },
+            { no: 41, pNo: "T1-26-14-06-0055-0041-8", nisn: "0132096104", nama: "CHERRY IVANA ANYOISTY HOSANG", mtkVal: 63.33, mtkKet: "Baik", indVal: 70.00, indKet: "Memadai" },
+            { no: 42, pNo: "T1-26-14-06-0055-0042-7", nisn: "0133836172", nama: "Axcel Junior", mtkVal: 26.67, mtkKet: "Kurang", indVal: 63.33, indKet: "Memadai" },
+            { no: 43, pNo: "T1-26-14-06-0055-0043-6", nisn: "3135736685", nama: "Muhammad Reyhan Fadhilah", mtkVal: 46.67, mtkKet: "Memadai", indVal: 63.33, indKet: "Memadai" },
+            { no: 44, pNo: "T1-26-14-06-0055-0044-5", nisn: "3142828134", nama: "Nazwa Malika Wijaya Ginting", mtkVal: 46.67, mtkKet: "Memadai", indVal: 93.33, indKet: "Baik" },
+            { no: 45, pNo: "T1-26-14-06-0055-0045-4", nisn: "0144665311", nama: "Siti Asha Rahmayanti", mtkVal: 43.33, mtkKet: "Memadai", indVal: 60.00, indKet: "Memadai" },
+            { no: 46, pNo: "T1-26-14-06-0055-0046-3", nisn: "3141586161", nama: "Muhammad Rayhan Dyandra", mtkVal: 30.00, mtkKet: "Kurang", indVal: 83.33, indKet: "Baik" },
+            { no: 47, pNo: "T1-26-14-06-0055-0047-2", nisn: "0131822743", nama: "Muhammad Tirta", mtkVal: 96.67, mtkKet: "Baik Istimewa", indVal: 66.67, indKet: "Memadai" },
+            { no: 48, pNo: "T1-26-14-06-0055-0048-9", nisn: "0145190790", nama: "Aidan Alfathi Dyra Ghossan", mtkVal: 53.33, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 49, pNo: "T1-26-14-06-0055-0049-8", nisn: "0141693739", nama: "Victoria Glory Kirana", mtkVal: 40.00, mtkKet: "Memadai", indVal: 80.00, indKet: "Baik" },
+            { no: 50, pNo: "T1-26-14-06-0055-0050-7", nisn: "0142807833", nama: "Felicia Jessie Oktavia", mtkVal: 50.00, mtkKet: "Memadai", indVal: 96.67, indKet: "Baik - Istimewa" },
+            { no: 51, pNo: "T1-26-14-06-0055-0051-6", nisn: "0149420465", nama: "KEISHA JEHOVA SALLOM SINATRA", mtkVal: 46.67, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 52, pNo: "T1-26-14-06-0055-0052-5", nisn: "0146730594", nama: "Viona Meilani", mtkVal: 80.00, mtkKet: "Baik", indVal: 83.33, indKet: "Baik" },
+            { no: 53, pNo: "T1-26-14-06-0055-0053-4", nisn: "0137996531", nama: "Yafet Natalno Mebas", mtkVal: 6.67, mtkKet: "Kurang", indVal: 76.67, indKet: "Baik" },
+            { no: 54, pNo: "T1-26-14-06-0055-0054-3", nisn: "3143877687", nama: "Paulus Dimas Fedrosa", mtkVal: 60.00, mtkKet: "Baik", indVal: 70.00, indKet: "Memadai" },
+            { no: 55, pNo: "T1-26-14-06-0055-0055-2", nisn: "0146880424", nama: "Siloam Wijaya Putra Cornelius", mtkVal: 46.67, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 56, pNo: "T1-26-14-06-0055-0056-9", nisn: "0144542216", nama: "Luiz Fharel Simbolon", mtkVal: 66.67, mtkKet: "Baik", indVal: 90.00, indKet: "Baik" },
+            { no: 57, pNo: "T1-26-14-06-0055-0057-8", nisn: "3135132404", nama: "Keisya Gebi Putri Prisilia", mtkVal: 50.00, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 58, pNo: "T1-26-14-06-0055-0058-7", nisn: "3147821688", nama: "Anggieta Berylia", mtkVal: 53.33, mtkKet: "Memadai", indVal: 100.00, indKet: "Baik - Istimewa" },
+            { no: 59, pNo: "T1-26-14-06-0055-0059-6", nisn: "0147771290", nama: "Daniella Putri Diandra", mtkVal: 80.00, mtkKet: "Baik", indVal: 90.00, indKet: "Baik" },
+            { no: 60, pNo: "T1-26-14-06-0055-0060-5", nisn: "0144054209", nama: "Nafeeza Aundy Pramesthi Prayogo", mtkVal: 33.33, mtkKet: "Memadai", indVal: 60.00, indKet: "Memadai" },
+            { no: 61, pNo: "T1-26-14-06-0055-0061-4", nisn: "0143895658", nama: "Muhammad Nooruji Arbain", mtkVal: 36.67, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 62, pNo: "T1-26-14-06-0055-0062-3", nisn: "0138600497", nama: "HAIFA ZARQA AN-NISA", mtkVal: 26.67, mtkKet: "Kurang", indVal: 73.33, indKet: "Memadai" },
+            { no: 63, pNo: "T1-26-14-06-0055-0063-2", nisn: "0134363273", nama: "NOOR ATIQAH ALNAZHIFA", mtkVal: 46.67, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 64, pNo: "T1-26-14-06-0055-0064-9", nisn: "0132143345", nama: "Muhammad Fahmi Rizqi", mtkVal: 50.00, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 65, pNo: "T1-26-14-06-0055-0065-8", nisn: "0145209482", nama: "Rensa Surya Perkasa", mtkVal: 53.33, mtkKet: "Memadai", indVal: 56.67, indKet: "Memadai" },
+            { no: 66, pNo: "T1-26-14-06-0055-0066-7", nisn: "0147138363", nama: "Adelia Jasmine Azzahra", mtkVal: 56.67, mtkKet: "Baik", indVal: 86.67, indKet: "Baik" },
+            { no: 67, pNo: "T1-26-14-06-0055-0067-6", nisn: "3144772313", nama: "Farrin Zellda Fauzi", mtkVal: 33.33, mtkKet: "Memadai", indVal: 63.33, indKet: "Memadai" },
+            { no: 68, pNo: "T1-26-14-06-0055-0068-5", nisn: "0147471692", nama: "Bilfagih Rey Alteza", mtkVal: 43.33, mtkKet: "Memadai", indVal: 73.33, indKet: "Memadai" },
+            { no: 69, pNo: "T1-26-14-06-0055-0069-4", nisn: "0144776346", nama: "Mirza Azizan", mtkVal: 33.33, mtkKet: "Memadai", indVal: 23.33, indKet: "Kurang" },
+            { no: 70, pNo: "T1-26-14-06-0055-0070-3", nisn: "0146861470", nama: "Mecca Shafiya Az Zahra", mtkVal: 56.67, mtkKet: "Baik", indVal: 83.33, indKet: "Baik" },
+            { no: 71, pNo: "T1-26-14-06-0055-0071-2", nisn: "0135778870", nama: "ALRIDHO DENIANDRA LESMANA", mtkVal: 50.00, mtkKet: "Memadai", indVal: 90.00, indKet: "Baik" },
+            { no: 72, pNo: "T1-26-14-06-0055-0072-9", nisn: "0137896505", nama: "Muhammad Fajar Ilham", mtkVal: 20.00, mtkKet: "Kurang", indVal: 90.00, indKet: "Baik" },
+            { no: 73, pNo: "T1-26-14-06-0055-0073-8", nisn: "0137707564", nama: "Salsabila Putri Al Ariani", mtkVal: 33.33, mtkKet: "Memadai", indVal: 60.00, indKet: "Memadai" },
+            { no: 74, pNo: "T1-26-14-06-0055-0074-7", nisn: "3131152115", nama: "Muhamad Adhyatsha Pratama", mtkVal: 60.00, mtkKet: "Baik", indVal: 76.67, indKet: "Baik" },
+            { no: 75, pNo: "T1-26-14-06-0055-0075-6", nisn: "0147361793", nama: "Azkiya Khumaira", mtkVal: 53.33, mtkKet: "Memadai", indVal: 76.67, indKet: "Baik" },
+            { no: 76, pNo: "T1-26-14-06-0055-0076-5", nisn: "0145579802", nama: "Kesia Tianka Nainggolan", mtkVal: 26.67, mtkKet: "Kurang", indVal: 76.67, indKet: "Baik" },
+            { no: 77, pNo: "T1-26-14-06-0055-0077-4", nisn: "0136108320", nama: "Aaron Al Akhyar", mtkVal: 43.33, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 78, pNo: "T1-26-14-06-0055-0078-3", nisn: "3142729784", nama: "TEUKU FAITH SYUJA RISYANDA", mtkVal: 46.67, mtkKet: "Memadai", indVal: 56.67, indKet: "Memadai" },
+            { no: 79, pNo: "T1-26-14-06-0055-0079-2", nisn: "0141164751", nama: "Kellen Lim", mtkVal: 36.67, mtkKet: "Memadai", indVal: 53.33, indKet: "Memadai" },
+            { no: 80, pNo: "T1-26-14-06-0055-0080-9", nisn: "0139567041", nama: "MUHAMMAD ARUNA AL-ZIDNI", mtkVal: 33.33, mtkKet: "Memadai", indVal: 36.67, indKet: "Kurang" },
+            { no: 81, pNo: "T1-26-14-06-0055-0081-8", nisn: "0134294383", nama: "Kholita Anatasya", mtkVal: 46.67, mtkKet: "Memadai", indVal: 63.33, indKet: "Memadai" },
+            { no: 82, pNo: "T1-26-14-06-0055-0082-7", nisn: "0148347969", nama: "Hana Wiji Astuti", mtkVal: 50.00, mtkKet: "Memadai", indVal: 86.67, indKet: "Baik" },
+            { no: 83, pNo: "T1-26-14-06-0055-0083-6", nisn: "3141894654", nama: "Vahrizzan Akhmad Arrava Endris", mtkVal: 43.33, mtkKet: "Memadai", indVal: 66.67, indKet: "Memadai" },
+            { no: 84, pNo: "T1-26-14-06-0055-0084-5", nisn: "3147579464", nama: "Afif Firdaus", mtkVal: 56.67, mtkKet: "Baik", indVal: 76.67, indKet: "Baik" },
+            { no: 85, pNo: "T1-26-14-06-0055-0085-4", nisn: "0147401742", nama: "MUHAMMAD IZDIHAR WIDODO", mtkVal: 53.33, mtkKet: "Memadai", indVal: 96.67, indKet: "Baik - Istimewa" },
+            { no: 86, pNo: "T1-26-14-06-0055-0086-3", nisn: "0131085930", nama: "Syabil Nanda Bayu Ismail", mtkVal: 50.00, mtkKet: "Memadai", indVal: 46.67, indKet: "Kurang" },
+            { no: 87, pNo: "T1-26-14-06-0055-0087-2", nisn: "3149410700", nama: "Raissha Almira Wibowo", mtkVal: 23.33, mtkKet: "Kurang", indVal: 30.00, indKet: "Kurang" },
+            { no: 88, pNo: "T1-26-14-06-0055-0088-9", nisn: "3134560361", nama: "Evita Farida Khaerunnisa", mtkVal: 30.00, mtkKet: "Kurang", indVal: 63.33, indKet: "Memadai" },
+            { no: 89, pNo: "T1-26-14-06-0055-0089-8", nisn: "0149605356", nama: "Muhammad Zacky", mtkVal: 46.67, mtkKet: "Memadai", indVal: 76.67, indKet: "Baik" }
+        ];
+
+        let rankedSiswaList = [];
+
+        // ==================== INITIALIZATION & PROCESSING ====================
+        window.addEventListener('DOMContentLoaded', () => {
+            hitungPeringkatOtomatis();
+            hitungStatistikAnonim();
+        });
+
+        // 1. Logika Perhitungan Rerata Kombinasi & Ranking Otomatis (Desc)
+        function hitungPeringkatOtomatis() {
+            rankedSiswaList = rawSiswaList.map(siswa => {
+                const rerata = (siswa.mtkVal + siswa.indVal) / 2;
+                return {
+                    ...siswa,
+                    rerata: parseFloat(rerata.toFixed(2))
+                };
+            });
+
+            // Sorting descending berdasarkan rerata
+            rankedSiswaList.sort((a, b) => b.rerata - a.rerata);
+
+            // Tambahkan rank secara terurut setelah disortir
+            rankedSiswaList = rankedSiswaList.map((siswa, index) => {
+                return {
+                    ...siswa,
+                    rank: index + 1
+                };
+            });
+        }
+
+        // 2. Batasan Digits Input (Supaya Pengguna Memasukkan Maksimal 10 Digit)
+        function limitDigits(input) {
+            if (input.value.length > 10) {
+                input.value = input.value.slice(0, 10);
+            }
+        }
+
+        // 3. Logika Pencarian Realtime & Efek Kejutan Dramatis
+        function prosesPencarian() {
+            const inputVal = document.getElementById('input-nisn').value.trim();
+            const errorCard = document.getElementById('error-message');
+            const resultWrapper = document.getElementById('result-wrapper');
+            const loadingContainer = document.getElementById('search-loading');
+
+            // Reset UI State
+            errorCard.style.display = 'none';
+            resultWrapper.style.display = 'none';
+
+            if (!inputVal) {
+                errorCard.style.display = 'flex';
+                document.getElementById('error-text').innerText = "Mohon masukkan nomor NISN Anda terlebih dahulu.";
+                return;
+            }
+
+            // Cari kecocokan NISN
+            const foundSiswa = rankedSiswaList.find(siswa => siswa.nisn === inputVal);
+
+            // Munculkan Loading Dramatis (1.2 Detik)
+            loadingContainer.style.display = 'flex';
+
+            setTimeout(() => {
+                loadingContainer.style.display = 'none';
+
+                if (foundSiswa) {
+                    // Buat Struktur Kartu Berdasarkan Ranking (Glow / Shimmer untuk Top 3)
+                    let cardThemeClass = "card-rank-normal";
+                    let badgeClass = "badge-rank-normal";
+                    let rankIcon = `<i class="fa-solid fa-award"></i> Peringkat #${foundSiswa.rank}`;
+
+                    if (foundSiswa.rank === 1) {
+                        cardThemeClass = "card-rank-1";
+                        badgeClass = "badge-rank-1";
+                        rankIcon = `<i class="fa-solid fa-trophy"></i> Juara 1 Kelas`;
+                    } else if (foundSiswa.rank === 2) {
+                        cardThemeClass = "card-rank-2";
+                        badgeClass = "badge-rank-2";
+                        rankIcon = `<i class="fa-solid fa-medal"></i> Juara 2 Kelas`;
+                    } else if (foundSiswa.rank === 3) {
+                        cardThemeClass = "card-rank-3";
+                        badgeClass = "badge-rank-3";
+                        rankIcon = `<i class="fa-solid fa-medal"></i> Juara 3 Kelas`;
+                    }
+
+                    // Mapping class CSS untuk Predikat (Sebab ada variasi spasi pada data asli)
+                    const mtkPredClass = getPredikatClass(foundSiswa.mtkKet);
+                    const indPredClass = getPredikatClass(foundSiswa.indKet);
+
+                    const templateCard = `
+                        <div class="result-card ${cardThemeClass} bounce-animation">
+                            <div class="badge-rank ${badgeClass}">
+                                ${rankIcon}
+                            </div>
+                            
+                            <div class="student-meta">
+                                <div class="greet">Hasil Kelulusan</div>
+                                <div class="name">${foundSiswa.nama}</div>
+                                <div class="nisn">NISN: ${foundSiswa.nisn}</div>
+                            </div>
+
+                            <div class="score-box-list">
+                                <!-- Baris Matematika -->
+                                <div class="score-row-item">
+                                    <div class="subject-info">
+                                        <span class="subject-name">Matematika</span>
+                                        <span class="subject-predikat ${mtkPredClass}">${foundSiswa.mtkKet}</span>
+                                    </div>
+                                    <span class="score-value">${foundSiswa.mtkVal.toFixed(2)}</span>
+                                </div>
+
+                                <!-- Baris Bahasa Indonesia -->
+                                <div class="score-row-item">
+                                    <div class="subject-info">
+                                        <span class="subject-name">Bahasa Indonesia</span>
+                                        <span class="subject-predikat ${indPredClass}">${foundSiswa.indKet}</span>
+                                    </div>
+                                    <span class="score-value">${foundSiswa.indVal.toFixed(2)}</span>
+                                </div>
+                            </div>
+
+                            <div class="card-score-footer">
+                                <div class="footer-left">
+                                    <span class="footer-label">RERATA KOMBINASI</span>
+                                    <span class="footer-value">${foundSiswa.rerata.toFixed(2)}</span>
+                                </div>
+                                <span class="badge-status">
+                                    Selesai TKA
+                                </span>
+                            </div>
+                        </div>
+                    `;
+
+                    resultWrapper.innerHTML = templateCard;
+                    resultWrapper.style.display = 'block';
+
+                } else {
+                    errorCard.style.display = 'flex';
+                    document.getElementById('error-text').innerText = "NISN '" + inputVal + "' tidak terdaftar atau salah. Silakan periksa kartu ujian Anda.";
+                }
+            }, 1200);
+        }
+
+        // Helper untuk Class Predikat Nilai
+        function getPredikatClass(keterangan) {
+            const cleanKet = keterangan.toLowerCase().replace(/\s/g, '');
+            if (cleanKet.includes('istimewa')) return 'pred-baik-istimewa';
+            if (cleanKet.includes('baik')) return 'pred-baik';
+            if (cleanKet.includes('memadai')) return 'pred-memadai';
+            return 'pred-kurang';
+        }
+
+        // ==================== LOGIKA REKAPITULASI HOME (ANONIM) ====================
+        function hitungStatistikAnonim() {
+            const totalSiswa = rankedSiswaList.length;
+            
+            let totalMtk = 0;
+            let totalInd = 0;
+
+            // Variabel hitung predikat
+            let mtkBaikCount = 0;
+            let mtkMemadaiCount = 0;
+            let mtkKurangCount = 0;
+
+            let indBaikCount = 0;
+            let indMemadaiCount = 0;
+            let indKurangCount = 0;
+
+            rankedSiswaList.forEach(siswa => {
+                totalMtk += siswa.mtkVal;
+                totalInd += siswa.indVal;
+
+                // Hitung Distribusi MTK
+                const mtkKetLower = siswa.mtkKet.toLowerCase();
+                if (mtkKetLower.includes('baik')) {
+                    mtkBaikCount++;
+                } else if (mtkKetLower.includes('memadai')) {
+                    mtkMemadaiCount++;
+                } else {
+                    mtkKurangCount++;
+                }
+
+                // Hitung Distribusi INDONESIA
+                const indKetLower = siswa.indKet.toLowerCase();
+                if (indKetLower.includes('baik')) {
+                    indBaikCount++;
+                } else if (indKetLower.includes('memadai')) {
+                    indMemadaiCount++;
+                } else {
+                    indKurangCount++;
+                }
+            });
+
+            // Set Rerata Keseluruhan
+            document.getElementById('rerata-matematika').innerText = (totalMtk / totalSiswa).toFixed(2);
+            document.getElementById('rerata-bahasa').innerText = (totalInd / totalSiswa).toFixed(2);
+
+            // Hitung Persentase & Suntik Text ke UI
+            const mtkBaikPct = Math.round((mtkBaikCount / totalSiswa) * 100);
+            const mtkMemadaiPct = Math.round((mtkMemadaiCount / totalSiswa) * 100);
+            const mtkKurangPct = Math.round((mtkKurangCount / totalSiswa) * 100);
+
+            document.getElementById('mtk-baik-pct').innerText = `${mtkBaikCount} siswa (${mtkBaikPct}%)`;
+            document.getElementById('mtk-memadai-pct').innerText = `${mtkMemadaiCount} siswa (${mtkMemadaiPct}%)`;
+            document.getElementById('mtk-kurang-pct').innerText = `${mtkKurangCount} siswa (${mtkKurangPct}%)`;
+
+            const indBaikPct = Math.round((indBaikCount / totalSiswa) * 100);
+            const indMemadaiPct = Math.round((indMemadaiCount / totalSiswa) * 100);
+            const indKurangPct = Math.round((indKurangCount / totalSiswa) * 100);
+
+            document.getElementById('ind-baik-pct').innerText = `${indBaikCount} siswa (${indBaikPct}%)`;
+            document.getElementById('ind-memadai-pct').innerText = `${indMemadaiCount} siswa (${indMemadaiPct}%)`;
+            document.getElementById('ind-kurang-pct').innerText = `${indKurangCount} siswa (${indKurangPct}%)`;
+
+            // Efek Animasi Isi Grafik Batang Kustom (Trigger saat halaman dimuat)
+            setTimeout(() => {
+                document.getElementById('mtk-baik-bar').style.width = `${mtkBaikPct}%`;
+                document.getElementById('mtk-memadai-bar').style.width = `${mtkMemadaiPct}%`;
+                document.getElementById('mtk-kurang-bar').style.width = `${mtkKurangPct}%`;
+
+                document.getElementById('ind-baik-bar').style.width = `${indBaikPct}%`;
+                document.getElementById('ind-memadai-bar').style.width = `${indMemadaiPct}%`;
+                document.getElementById('ind-kurang-bar').style.width = `${indKurangPct}%`;
+            }, 300);
+        }
+
+        // ==================== NAVIGASI SYSTEM MULTI-PAGE ====================
+        function switchTab(targetTab) {
+            // Hapus Status Aktif Navigasi
+            document.getElementById('nav-btn-home').classList.remove('active');
+            document.getElementById('nav-btn-nilaiku').classList.remove('active');
+
+            // Sembunyikan semua Laman
+            document.getElementById('section-home').classList.remove('active');
+            document.getElementById('section-nilaiku').classList.remove('active');
+
+            // Aktifkan tab baru
+            if (targetTab === 'home') {
+                document.getElementById('nav-btn-home').classList.add('active');
+                document.getElementById('section-home').classList.add('active');
+                // Re-trigger animasi bar chart ketika berpindah
+                resetAndAnimateBars();
+            } else if (targetTab === 'nilaiku') {
+                document.getElementById('nav-btn-nilaiku').classList.add('active');
+                document.getElementById('section-nilaiku').classList.add('active');
+            }
+        }
+
+        function resetAndAnimateBars() {
+            // Reset dahulu ke 0% agar saat dibuka kembali ada transisi gerak tumbuh yang apik
+            document.getElementById('mtk-baik-bar').style.width = '0%';
+            document.getElementById('mtk-memadai-bar').style.width = '0%';
+            document.getElementById('mtk-kurang-bar').style.width = '0%';
+            document.getElementById('ind-baik-bar').style.width = '0%';
+            document.getElementById('ind-memadai-bar').style.width = '0%';
+            document.getElementById('ind-kurang-bar').style.width = '0%';
+
+            setTimeout(() => {
+                hitungStatistikAnonim();
+            }, 100);
+        }
+    </script>
+</body>
+</html>
